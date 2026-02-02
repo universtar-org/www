@@ -8,7 +8,7 @@ section_order = ["hero", "features", "showcase", "trust", "social_proof", "final
 [extra.hero]
 title = "Welcome to Universtar!"
 description = "..Description of Universtar.."
-image = "/images/ocean.png" # Background image
+image = "/images/mountain.png" # Background image
 gradient_opacity = 20         # Opacity of the animated gradient background (0-100, default: 20)
 image_opacity = 20            # Opacity of the background image (0-100, default: 20)
 cta_buttons = [
@@ -23,8 +23,8 @@ description = "Clean, minimal, and focused on content"
 
 # Add individual features
 [[extra.features_section.features]]
-title = "Documentation Friendly"
-desc = "Provides a clean writing experience for documentation."
+title = "XMUM"
+desc = "Universtar in Xiamen University Malaysia"
 icon = "fa-solid fa-book"
 url = "https://xmum.universtar.org/"
 
