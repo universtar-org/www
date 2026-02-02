@@ -20,7 +20,7 @@ Desktop.ini
 *.swo
 *~
 
-# Temporary files 
+# Temporary files
 *.log
 *.tmp
 .env
@@ -28,3 +28,5 @@ Desktop.ini
 
 # Node modules
 node_modules/
+
+.direnv/
