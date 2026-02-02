@@ -1,0 +1,4 @@
+[submodule "themes/goyo"]
+  path = themes/goyo
+  url = https://github.com/hahwul/goyo
+  branch = main
