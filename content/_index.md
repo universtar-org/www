@@ -7,8 +7,7 @@ section_order = ["hero", "features", "showcase", "trust", "social_proof", "final
 
 [extra.hero]
 title = "Welcome to Universtar!"
-description = "Universtar aims to help students be more competitive in future job searching.
- By using universtar, you can get inspiration for your own projects, improve you skills, and gain competitveness in career"
+description = "Universtar aims to help students be more competitive in future job searching. By using universtar, you can get inspiration for your own projects, improve you skills, and gain competitveness in career"
 image = "/images/mountain.png" # Background image
 gradient_opacity = 20         # Opacity of the animated gradient background (0-100, default: 20)
 image_opacity = 20            # Opacity of the background image (0-100, default: 20)
@@ -39,7 +38,25 @@ title = "TBD"
 desc = "To be determined"
 icon = "fa-solid fa-bolt"
 
-
+[extra.social_proof_section]
+title = "Why choose Universtar"
+testimonials = [
+    {
+        author = "Career Competitiveness",
+	role = "",
+        quote = "By sharing your projects, you could gain more star and recognition to falitate your job hunting and career advancement."
+    },
+    {
+        author = "Boarder Perspective",
+	role = "",
+        quote = "You can explore projects from different courses, gaining insight into courses content and get inspiration for your own assignments or projects."
+    },
+    {
+        author = "Skill Improvement",
+	role = "",
+        quote = "You will gain skills and experience from others’ project."
+    },
+]
 
 [extra.final_cta_section]
 title = "Contribute to Universtar"
