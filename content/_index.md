@@ -7,7 +7,8 @@ section_order = ["hero", "features", "showcase", "trust", "social_proof", "final
 
 [extra.hero]
 title = "Welcome to Universtar!"
-description = "..Description of Universtar.."
+description = "Universtar aims to help students be more competitive in future job searching.
+ By using universtar, you can get inspiration for your own projects, improve you skills, and gain competitveness in career"
 image = "/images/mountain.png" # Background image
 gradient_opacity = 20         # Opacity of the animated gradient background (0-100, default: 20)
 image_opacity = 20            # Opacity of the background image (0-100, default: 20)
@@ -18,8 +19,8 @@ cta_buttons = [
 
 # Configure the section title and description
 [extra.features_section]
-title = "Essential Features"
-description = "Clean, minimal, and focused on content"
+title = "Universities"
+description = "Where the student-created projects come from"
 
 # Add individual features
 [[extra.features_section.features]]
@@ -29,13 +30,13 @@ icon = "fa-solid fa-book"
 url = "https://xmum.universtar.org/"
 
 [[extra.features_section.features]]
-title = "Simple Design"
-desc = "A theme that pursues minimalism."
+title = "TBD"
+desc = "To be determined"
 icon = "fa-solid fa-minimize"
 
 [[extra.features_section.features]]
-title = "Fast Performance"
-desc = "Built with performance in mind."
+title = "TBD"
+desc = "To be determined"
 icon = "fa-solid fa-bolt"
 
 
@@ -44,5 +45,5 @@ icon = "fa-solid fa-bolt"
 title = "Contribute to Universtar"
 description = "Help us make Universtar better. Contributions are welcome!"
 button = { text = "View GitHub", url = "https://github.com/universtar-org" }
-image = "/images/contribute.png"
+# image = "/images/oilpainting.png"
 +++
