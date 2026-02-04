@@ -1,13 +1,13 @@
 +++
 template = "landing.html"
-title = "Goyo"
+title = "UniverStar"
 [extra]
 # Custom order - sections will render in this sequence
 section_order = ["hero", "features", "showcase", "trust", "social_proof", "final_cta"]
 
 [extra.hero]
 title = "Welcome to Universtar!"
-description = "Universtar aims to help students be more competitive in future job searching. By using universtar, you can get inspiration for your own projects, improve you skills, and gain competitveness in career"
+description = "Universtar is a platform for university students to showcase and promote their projects. "
 image = "/images/mountain.png" # Background image
 gradient_opacity = 20         # Opacity of the animated gradient background (0-100, default: 20)
 image_opacity = 20            # Opacity of the background image (0-100, default: 20)
@@ -18,25 +18,15 @@ cta_buttons = [
 
 # Configure the section title and description
 [extra.features_section]
-title = "Universities"
-description = "Where the student-created projects come from"
+title = "Participating Universities"
+description = "A growing list of universities currently included in the project."
 
 # Add individual features
 [[extra.features_section.features]]
 title = "XMUM"
-desc = "Universtar in Xiamen University Malaysia"
+desc = "UniverStar in Xiamen University Malaysia"
 icon = "fa-solid fa-book"
 url = "https://xmum.universtar.org/"
-
-[[extra.features_section.features]]
-title = "TBD"
-desc = "To be determined"
-icon = "fa-solid fa-minimize"
-
-[[extra.features_section.features]]
-title = "TBD"
-desc = "To be determined"
-icon = "fa-solid fa-bolt"
 
 [extra.social_proof_section]
 title = "Why choose Universtar"
