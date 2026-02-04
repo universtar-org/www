@@ -1,6 +1,8 @@
 +++
 template = "landing.html"
 title = "UniverStar"
+sort_by = "weight"
+
 [extra]
 # Custom order - sections will render in this sequence
 section_order = ["hero", "features", "showcase", "trust", "social_proof", "final_cta"]
