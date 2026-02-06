@@ -1,4 +1,4 @@
-title = "Your Docs"
+title = "UniverStar"
 theme = "goyo"
 default_language = "en"
 base_url = "http://127.0.0.1:1111"
@@ -7,9 +7,6 @@ base_url = "http://127.0.0.1:1111"
 nav = [
   { name = "Documents", url = "/introduction", type = "url", icon = "fa-solid fa-book" },
   { name = "GitHub", url = "https://github.com/universtar-org", type = "url", icon = "fa-brands fa-github" },
-  { name = "Links", type = "dropdown", icon = "fa-solid fa-link", members = [
-    { name = "Creator Blog", url = "https://www.hahwul.com", type = "url", icon = "fa-solid fa-fire-flame-curved" },
-  ] },
 ]
 
 # Navigation Configuration (i18n / optional)
