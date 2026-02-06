@@ -62,6 +62,9 @@
                 {% else %}
                   hero-cta-secondary
                 {% endif %}"
+                {% if button.url is starting_with("http") %}
+                  target="_blank"
+                {% endif %}
               >
                 <span class="relative z-10">{{ button.text }}</span>
                 {% if button.style == 'primary' %}
