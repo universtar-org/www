@@ -53,6 +53,6 @@ testimonials = [
 [extra.final_cta_section]
 title = "Contribute to Universtar"
 description = "Help us make Universtar better. Contributions are welcome!"
-button = { text = "View GitHub", url = "https://github.com/universtar-org" }
+button = { text = "Join Us", url = "/contributing" }
 # image = "/images/oilpainting.png"
 +++
