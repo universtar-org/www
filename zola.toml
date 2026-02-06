@@ -43,11 +43,9 @@ edit_url = "" # Base URL for editing pages (e.g., "https://github.com/user/repo/
 # Logo Configuration (new structured format)
 # Supports theme-specific logos that change when toggling between dark/light themes
 [extra.logo]
-text = "Universtar"                        # Text to display if no logo image
-image_path = "images/goyo.png"             # Default logo image path
-image_padding = "5px"                      # Padding for logo image (optional)
-dark_image_path = "images/goyo-dark.png"   # Logo for dark theme (optional override)
-light_image_path = "images/goyo-light.png" # Logo for light theme (optional override)
+text = "Universtar"         # Text to display if no logo image
+image_path = "/favicon.svg" # Default logo image path
+image_padding = "12px"      # Padding for logo image (optional)
 
 # Legacy logo configuration (still supported for backward compatibility)
 # logo_text = "Goyo"
@@ -114,9 +112,5 @@ category = ""    # Comment category (e.g., "General")
 category_id = "" # Category ID (e.g., "DIC_kwDOXXXXXXXXXX")
 
 [extra.favicon]
-base_path = "/icons/"
-favicon_96x96 = "/icons/favicon-96x96.png"
-favicon_svg = "/icons/favicon.svg"
-favicon_ico = "/icons/favicon.ico"
-apple_touch_icon = "/icons/apple-touch-icon.png"
-site_webmanifest = "/icons/site.webmanifest"
+base_path = "/"
+favicon_svg = "/favicon.svg"
