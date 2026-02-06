@@ -8,46 +8,46 @@ nav = [
   { name = "Documents", url = "/introduction", type = "url", icon = "fa-solid fa-book" },
   { name = "GitHub", url = "https://github.com/universtar-org", type = "url", icon = "fa-brands fa-github" },
   { name = "Links", type = "dropdown", icon = "fa-solid fa-link", members = [
-    { name = "Creator Blog", url = "https://www.hahwul.com", type = "url", icon = "fa-solid fa-fire-flame-curved" }
-  ] }
+    { name = "Creator Blog", url = "https://www.hahwul.com", type = "url", icon = "fa-solid fa-fire-flame-curved" },
+  ] },
 ]
 
 # Navigation Configuration (i18n / optional)
 # `nav_{lang}`: Language-specific navigation menu (e.g., `nav_ko` for Korean).
 # If defined, it will be used instead of the default `nav` for that language.
 nav_ko = [
-    { name = "문서", url = "/ko/introduction", type = "url", icon = "fa-solid fa-book" },
-    { name = "GitHub", url = "https://github.com/hahwul/goyo", type = "url", icon = "fa-brands fa-github" },
-    { name = "링크", type = "dropdown", icon = "fa-solid fa-link", members = [
-        { name = "제작자 블로그", url = "https://www.hahwul.com", type = "url", icon = "fa-solid fa-fire-flame-curved" },
-    ] },
+  { name = "문서", url = "/ko/introduction", type = "url", icon = "fa-solid fa-book" },
+  { name = "GitHub", url = "https://github.com/hahwul/goyo", type = "url", icon = "fa-brands fa-github" },
+  { name = "링크", type = "dropdown", icon = "fa-solid fa-link", members = [
+    { name = "제작자 블로그", url = "https://www.hahwul.com", type = "url", icon = "fa-solid fa-fire-flame-curved" },
+  ] },
 ]
 
 # Footer Configuration
-footer_html = "Powered by <a href='https://www.getzola.org'>Zola</a> and <a href='https://github.com/hahwul/goyo'>Goyo</a>"  # Footer HTML content
+footer_html = "Powered by <a href='https://www.getzola.org'>Zola</a> and <a href='https://github.com/hahwul/goyo'>Goyo</a>" # Footer HTML content
 
 # Thumbnail Configuration
-default_thumbnail = "images/default_thumbnail.jpg"  # Default thumbnail image path
+default_thumbnail = "images/default_thumbnail.jpg" # Default thumbnail image path
 
 # Google Tag Configuration
-gtag = ""  # Google Analytics tracking ID
+gtag = "" # Google Analytics tracking ID
 
 # Language Configuration
 [extra.lang]
-rtl = []  # List of RTL languages e.g. ["ar", "he"]
-aliases = { en = "English", ko = "한국어" }  # Language display names for the language selector
+rtl = []                                 # List of RTL languages e.g. ["ar", "he"]
+aliases = { en = "English", ko = "한국어" } # Language display names for the language selector
 
 # Edit URL Configuration
-edit_url = ""  # Base URL for editing pages (e.g., "https://github.com/user/repo/edit/main")
+edit_url = "" # Base URL for editing pages (e.g., "https://github.com/user/repo/edit/main")
 
 # Logo Configuration (new structured format)
 # Supports theme-specific logos that change when toggling between dark/light themes
 [extra.logo]
-text = "Universtar"  # Text to display if no logo image
-image_path = "images/goyo.png"  # Default logo image path
-image_padding = "5px"  # Padding for logo image (optional)
-dark_image_path = "images/goyo-dark.png"  # Logo for dark theme (optional override)
-light_image_path = "images/goyo-light.png"  # Logo for light theme (optional override)
+text = "Universtar"                        # Text to display if no logo image
+image_path = "images/goyo.png"             # Default logo image path
+image_padding = "5px"                      # Padding for logo image (optional)
+dark_image_path = "images/goyo-dark.png"   # Logo for dark theme (optional override)
+light_image_path = "images/goyo-light.png" # Logo for light theme (optional override)
 
 # Legacy logo configuration (still supported for backward compatibility)
 # logo_text = "Goyo"
@@ -56,8 +56,8 @@ light_image_path = "images/goyo-light.png"  # Logo for light theme (optional ove
 
 # Twitter Configuration (new structured format)
 [extra.twitter]
-site = "@hahwul"  # Site Twitter handle
-creator = "@hahwul"  # Creator Twitter handle
+site = "@hahwul"    # Site Twitter handle
+creator = "@hahwul" # Creator Twitter handle
 
 # Legacy Twitter configuration (still supported for backward compatibility)
 # twitter_site = "@hahwul"
@@ -65,11 +65,11 @@ creator = "@hahwul"  # Creator Twitter handle
 
 # Theme Configuration (new structured format)
 [extra.theme]
-colorset = "dark"           # Default color scheme (dark/light)
-brightness = "normal"       # Common brightness: "darker", "normal", "lighter"
+colorset = "dark"     # Default color scheme (dark/light)
+brightness = "normal" # Common brightness: "darker", "normal", "lighter"
 # dark_brightness = "darker"  # Override brightness for dark theme (optional)
 # light_brightness = "normal" # Override brightness for light theme (optional)
-disable_toggle = false      # Hide theme toggle button
+disable_toggle = false # Hide theme toggle button
 
 # Legacy theme configuration (still supported for backward compatibility)
 # default_colorset = "dark"
@@ -78,9 +78,9 @@ disable_toggle = false      # Hide theme toggle button
 
 # Font Configuration (new structured format)
 [extra.font]
-enabled = true  # Set to true to use custom font
-name = "MycustomFont"        # Name of the custom font (e.g., "Roboto", "Noto Sans KR")
-path = "fonts/mycustomfont.woff"        # Local path (e.g., "fonts/custom.woff") or remote URL
+enabled = true                   # Set to true to use custom font
+name = "MycustomFont"            # Name of the custom font (e.g., "Roboto", "Noto Sans KR")
+path = "fonts/mycustomfont.woff" # Local path (e.g., "fonts/custom.woff") or remote URL
 
 # Legacy font configuration (still supported for backward compatibility)
 # custom_font_enabled = false
@@ -89,7 +89,7 @@ path = "fonts/mycustomfont.woff"        # Local path (e.g., "fonts/custom.woff")
 
 # Sidebar Configuration (new structured format)
 [extra.sidebar]
-expand_depth = 1         # Sidebar expansion depth (max 5)
+expand_depth = 1          # Sidebar expansion depth (max 5)
 disable_root_hide = false # Prevent hiding sidebar on root page
 
 # Legacy sidebar configuration (still supported for backward compatibility)
@@ -98,8 +98,8 @@ disable_root_hide = false # Prevent hiding sidebar on root page
 
 # Share Buttons Configuration (new structured format)
 [extra.share]
-copy_url = false  # Copy URL button
-x = false         # Share on X button
+copy_url = false # Copy URL button
+x = false        # Share on X button
 
 # Legacy share configuration (still supported for backward compatibility)
 # enable_copy_url = false
@@ -107,11 +107,11 @@ x = false         # Share on X button
 
 [extra.comments]
 enabled = false  # Enable comments
-system = ""  # Comment system (e.g., "giscus")
-repo = ""  # Repository for comments (e.g., "hahwul/goyo")
-repo_id = ""  # Repository ID (e.g., "R_kgDOXXXXXXX")
-category = ""  # Comment category (e.g., "General")
-category_id = ""  # Category ID (e.g., "DIC_kwDOXXXXXXXXXX")
+system = ""      # Comment system (e.g., "giscus")
+repo = ""        # Repository for comments (e.g., "hahwul/goyo")
+repo_id = ""     # Repository ID (e.g., "R_kgDOXXXXXXX")
+category = ""    # Comment category (e.g., "General")
+category_id = "" # Category ID (e.g., "DIC_kwDOXXXXXXXXXX")
 
 [extra.favicon]
 base_path = "/icons/"
