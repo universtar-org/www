@@ -8,8 +8,8 @@ sort_by = "weight"
 section_order = ["hero", "features", "showcase", "trust", "social_proof", "final_cta"]
 
 [extra.hero]
-title = "Welcome to Universtar!"
-description = "Universtar is a platform for university students to showcase and promote their projects. "
+title = "Welcome to UniverStar!"
+description = "UniverStar is a platform for university students to showcase and promote their projects. "
 image = "/images/mountain.png" # Background image
 gradient_opacity = 20         # Opacity of the animated gradient background (0-100, default: 20)
 image_opacity = 20            # Opacity of the background image (0-100, default: 20)
@@ -31,7 +31,7 @@ icon = "fa-solid fa-book"
 url = "https://xmum.universtar.org/"
 
 [extra.social_proof_section]
-title = "Why choose Universtar"
+title = "Why choose UniverStar"
 testimonials = [
     {
         author = "Career Competitiveness",
@@ -51,8 +51,8 @@ testimonials = [
 ]
 
 [extra.final_cta_section]
-title = "Contribute to Universtar"
-description = "Help us make Universtar better. Contributions are welcome!"
+title = "Contribute to UniverStar"
+description = "Help us make UniverStar better. Contributions are welcome!"
 button = { text = "Join Us", url = "/contributing" }
 # image = "/images/oilpainting.png"
 +++

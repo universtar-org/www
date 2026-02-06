@@ -40,7 +40,7 @@ edit_url = "" # Base URL for editing pages (e.g., "https://github.com/user/repo/
 # Logo Configuration (new structured format)
 # Supports theme-specific logos that change when toggling between dark/light themes
 [extra.logo]
-text = "Universtar"         # Text to display if no logo image
+text = "UniverStar"         # Text to display if no logo image
 image_path = "/favicon.svg" # Default logo image path
 image_padding = "12px"      # Padding for logo image (optional)
 
