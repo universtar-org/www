@@ -51,8 +51,8 @@ image_padding = "12px"      # Padding for logo image (optional)
 
 # Twitter Configuration (new structured format)
 [extra.twitter]
-site = "@hahwul"    # Site Twitter handle
-creator = "@hahwul" # Creator Twitter handle
+site = "@universtar"        # Site Twitter handle
+creator = "@universtar-org" # Creator Twitter handle
 
 # Legacy Twitter configuration (still supported for backward compatibility)
 # twitter_site = "@hahwul"
