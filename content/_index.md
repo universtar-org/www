@@ -14,7 +14,7 @@ image = "/images/mountain.png" # Background image
 gradient_opacity = 20         # Opacity of the animated gradient background (0-100, default: 20)
 image_opacity = 20            # Opacity of the background image (0-100, default: 20)
 cta_buttons = [
-    { text = "Demo", url = "http://demo.unvierstar.org/", style = "primary" },
+    { text = "Get Start", url = "/get-start/submit-project", style = "primary" },
     { text = "View on GitHub", url = "https://github.com/universtar-org", style = "secondary" },
 ]
 
