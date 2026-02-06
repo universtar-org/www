@@ -11,22 +11,22 @@ Suppose that a user named `alice` wants to submit her projects to `XMUM`, then s
 2. Fork it to your account.
 3. Clone your fork:
 
-```bash
-git clone git@github.com:alice/xmum.git
-cd xmum
-```
+   ```bash
+   git clone git@github.com:alice/xmum.git
+   cd xmum
+   ```
 
 4. Add upstream:
 
-```bash
-git remote add upstream <git-http-link>
-```
+   ```bash
+   git remote add upstream <git-http-link>
+   ```
 
-For example,
+   For example,
 
-```bash
-git remote add upstream https://github.com/universtar-org/xmum.git
-```
+   ```bash
+   git remote add upstream https://github.com/universtar-org/xmum.git
+   ```
 
 # Create a Branch
 
@@ -43,17 +43,17 @@ git switch --create project/alice upstream/main
 
 1. Create a YAML file named after your username.
 
-```text
-data/projects/alice.yaml
-```
+   ```text
+   data/projects/alice.yaml
+   ```
 
 2. Add your projects.
 
-```yaml
-- repo: "demo"
-- repo: "foo"
-- repo: "bar"
-```
+   ```yaml
+   - repo: "demo"
+   - repo: "foo"
+   - repo: "bar"
+   ```
 
 # Commit Changes
 
