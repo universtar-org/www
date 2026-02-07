@@ -22,8 +22,6 @@
       shellHook = ''
         echo "Entering the development environment!"
         zola --version
-
-        npm install
       '';
     };
   };
