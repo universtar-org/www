@@ -2,6 +2,10 @@ title = "UniverStar"
 theme = "goyo"
 default_language = "en"
 base_url = "http://127.0.0.1:1111"
+
+[markdown.highlighting]
+theme = "github-dark"
+
 [extra]
 # Navigation Configuration
 nav = [
