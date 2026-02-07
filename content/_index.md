@@ -52,7 +52,7 @@ testimonials = [
 
 [extra.final_cta_section]
 title = "Contribute to UniverStar"
-description = "Help us make UniverStar better. Contributions are welcome!"
+description = "UniverStar is an open-source project. Contributions are welcome! To make UniverStar better, click the button below to start!"
 button = { text = "Join Us", url = "/contributing" }
 # image = "/images/oilpainting.png"
 +++
