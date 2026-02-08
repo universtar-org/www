@@ -1,0 +1,734 @@
+<!DOCTYPE html>
+<html lang="en" style="background-color: #0f172a;">
+
+<head>
+    
+        
+    
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Resource Hints for better performance -->
+    
+
+    <!-- Initialize theme and brightness before CSS loads to prevent FOUC -->
+    <script>
+        (function() {
+            // Theme mapping - maps user-friendly names to actual DaisyUI theme names
+            var themeMapping = { "goyo-dark": "night", "goyo-light": "lofi" };
+
+            
+            
+            
+                
+                
+                
+                
+            
+            // Get default values from config
+            var defaultColorset = "dark";
+            var darkBrightness = "normal";
+            var lightBrightness = "normal";
+            var themeMap = { "dark": "goyo-dark", "light": "goyo-light" };
+            var fallbackTheme = themeMap[defaultColorset] || "goyo-dark";
+
+            // Expose brightness config for global use (e.g., goyo.js)
+            window.darkBrightness = darkBrightness;
+            window.lightBrightness = lightBrightness;
+
+            // Get theme from localStorage or use fallback
+            var currentUserTheme = localStorage.getItem('theme') || fallbackTheme;
+            var actualTheme = themeMapping[currentUserTheme] || currentUserTheme;
+
+            // Determine brightness based on current theme
+            var currentBrightness = (currentUserTheme === "goyo-dark") ? darkBrightness : lightBrightness;
+
+            // Set theme and brightness attributes immediately
+            document.documentElement.setAttribute("data-theme", actualTheme);
+            document.documentElement.setAttribute("data-brightness", currentBrightness);
+        })();
+    </script>
+
+    <style>
+        
+        
+        
+            
+            
+            
+        
+        
+            
+            
+                
+                @font-face {
+                    font-family: "MycustomFont";
+                    src: url('https://universtar.org/fonts/mycustomfont.woff') format("woff");
+                    font-weight: 400;
+                    font-style: normal;
+                    font-display: swap;
+                }
+            
+            body {
+                font-family: "MycustomFont", sans-serif;
+            }
+        
+    </style>
+
+    
+
+    <title>Contributing | UniverStar</title>
+
+    
+    
+
+      <!-- SEO: Open Graph / Twitter Card -->
+      <meta property="og:title" content="Contributing | UniverStar" />
+      <meta property="og:description" content="" />
+      <meta property="og:url" content="https://universtar.org" />
+      <meta property="og:type" content="website" />
+      
+      <meta property="og:image" content="https://universtar.org/images/default_thumbnail.jpg" />
+      
+
+      <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:title" content="UniverStar" />
+      <meta name="twitter:description" content="" />
+      
+      
+      
+          
+          
+      
+      
+      <meta name="twitter:site" content="@universtar" />
+      
+      
+      <meta name="twitter:creator" content="@universtar-org" />
+      
+      
+      <meta name="twitter:image" content="https://universtar.org/images/default_thumbnail.jpg" />
+      
+
+      <!-- Browser address bar color -->
+      <meta name="theme-color" content="#0f172a">
+
+      <!-- Favicon -->
+      
+      
+      
+      
+          
+          
+          
+          
+          
+          
+      
+      <link rel="icon" type="image/png" href="/favicon.svg" sizes="96x96" />
+      <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+      <link rel="shortcut icon" href="/favicon.svg" />
+      <link rel="apple-touch-icon" sizes="180x180" href="/favicon.svg" />
+      <link rel="manifest" href="" />
+
+      <!-- CSS -->
+    <link rel="stylesheet" href="https://universtar.org/css/main.css">
+    <link rel="stylesheet" href="https://universtar.org/css/font-awesome.min.css">
+
+    <!-- Preload critical fonts -->
+    <link rel="preload" href="https://universtar.org/fonts/Pretendard-Regular.woff" as="font" type="font/woff" crossorigin>
+
+    <!-- Defer non-critical scripts -->
+    <script defer src="https://universtar.org/js/copy_code.js"></script>
+    <script defer src="https://universtar.org/js/copy_heading_link.js"></script>
+
+    <!-- Lazy load Mermaid and KaTeX - only when needed -->
+    <script>
+        // Lazy load KaTeX and Mermaid when needed
+        window.addEventListener('DOMContentLoaded', function() {
+            // Check for both KaTeX inline and block elements in one pass
+            var katexInlineElements = document.querySelectorAll('.katex-inline');
+            var katexBlockElements = document.querySelectorAll('.katex-block');
+            var hasKatex = katexInlineElements.length > 0 || katexBlockElements.length > 0;
+            var hasMermaid = document.querySelector('.mermaid');
+
+            // Load KaTeX if math elements are present
+            if (hasKatex) {
+                // Load KaTeX CSS first
+                var katexCSS = document.createElement('link');
+                katexCSS.rel = 'stylesheet';
+                katexCSS.href = 'https://universtar.org/css/katex.min.css';
+                document.head.appendChild(katexCSS);
+
+                // Load KaTeX JS
+                var katexScript = document.createElement('script');
+                katexScript.src = 'https://universtar.org/js/katex.min.js';
+                katexScript.onload = function() {
+                    // Render inline elements
+                    katexInlineElements.forEach(function(elem) {
+                        var texContent = elem.textContent || elem.innerText;
+                        try {
+                            katex.render(texContent, elem, {
+                                throwOnError: false,
+                                displayMode: false
+                            });
+                        } catch(e) {
+                            console.error('KaTeX render error:', e);
+                        }
+                    });
+
+                    // Render block elements
+                    katexBlockElements.forEach(function(elem) {
+                        var texContent = elem.textContent || elem.innerText;
+                        try {
+                            katex.render(texContent, elem, {
+                                throwOnError: false,
+                                displayMode: true
+                            });
+                        } catch(e) {
+                            console.error('KaTeX render error:', e);
+                        }
+                    });
+                };
+                document.head.appendChild(katexScript);
+            }
+
+            // Load Mermaid if diagram elements are present
+            if (hasMermaid) {
+                var mermaidScript = document.createElement('script');
+                mermaidScript.src = 'https://universtar.org/js/mermaid.min.js';
+                mermaidScript.onload = function() {
+                    // Initialize Mermaid after loading
+                    if (typeof window.initMermaid === 'function') {
+                        window.initMermaid();
+                    }
+                };
+                document.head.appendChild(mermaidScript);
+            }
+        });
+    </script>
+
+    
+    
+</head>
+<body>
+    
+
+
+
+    <div class="drawer lg:drawer-open">
+        <input id="my-drawer-2" type="checkbox" class="drawer-toggle" />
+        <div class="drawer-content flex flex-col pt-16">
+            
+  
+  
+
+  
+  
+    
+    
+    
+    
+    
+  
+
+  
+
+  <div
+    class="navbar opacity-95 fixed top-0 left-0 right-0 z-50 h-16 border-b border-gray-500/15 backdrop-blur-3xl"
+  >
+    <!-- Mobile hamburger -->
+    <div class="flex-none lg:hidden">
+      <label for="my-drawer-2" class="btn btn-square btn-ghost">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          class="inline-block w-5 h-5 stroke-current"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M4 6h16M4 12h16M4 18h16"
+          ></path>
+        </svg>
+      </label>
+    </div>
+    <!-- Logo -->
+    <div class="flex-1">
+      <a
+        href="/"
+        class="btn btn-ghost hover:animate-pulse hover:bg-transparent hover:border-transparent normal-case text-xl"
+        style="background: linear-gradient(135deg, #9ca3af, #6b7280); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; font-weight: bold; font-size: 1.5rem;"
+      >
+        
+          
+          <img
+            src="https://universtar.org/favicon.svg"
+            alt="UniverStar"
+            class="h-18 w-auto"
+            
+              style="padding: 12px;"
+            
+          />
+        
+        UniverStar
+      </a>
+    </div>
+    <!-- Desktop Menu -->
+    <div class="flex-none hidden lg:flex">
+      
+  <ul class="menu w-full justify-end lg:menu-horizontal px-1">
+    
+    
+    
+      
+        
+          <li>
+            <a
+              class="btn btn-ghost hover:no-underline justify-end w-full"
+              href="/introduction"
+              
+            >
+              <i class="fa-solid fa-book"></i>
+              Documents
+            </a>
+          </li>
+        
+      
+        
+          <li>
+            <a
+              class="btn btn-ghost hover:no-underline justify-end w-full"
+              href="https://github.com/universtar-org"
+              
+                target="_blank"
+              
+            >
+              <i class="fa-brands fa-github"></i>
+              GitHub
+            </a>
+          </li>
+        
+      
+    
+    
+
+    
+    
+    
+      
+    
+    
+      <li>
+        <label class="swap swap-rotate btn btn-ghost justify-end w-full">
+          <input
+            type="checkbox"
+            class="theme-controller"
+            value="night"
+            aria-labelledby="swap color"
+          />
+          <svg
+            class="swap-off h-5 w-5 fill-current"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M5.64,17l-.71.71a1,1,0,0,0,0,1.41,1,1,0,0,0,1.41,0l.71-.71A1,1,0,0,0,5.64,17ZM5,12a1,1,0,0,0-1-1H3a1,1,0,0,0,0,2H4A1,1,0,0,0,5,12Zm7-7a1,1,0,0,0,1-1V3a1,1,0,0,0-2,0V4A1,1,0,0,0,12,5ZM5.64,7.05a1,1,0,0,0,.7.29,1,1,0,0,0,.71-.29,1,1,0,0,0,0-1.41l-.71-.71A1,1,0,0,0,4.93,6.34Zm12,.29a1,1,0,0,0,.7-.29l.71-.71a1,1,0,1,0-1.41-1.41L17,5.64a1,1,0,0,0,0,1.41A1,1,0,0,0,17.66,7.34ZM21,11H20a1,1,0,0,0,0,2h1a1,1,0,0,0,0-2Zm-9,8a1,1,0,0,0-1,1v1a1,1,0,0,0,2,0V20A1,1,0,0,0,12,19ZM18.36,17A1,1,0,0,0,17,18.36l.71.71a1,1,0,0,0,1.41,0,1,1,0,0,0,0-1.41ZM12,6.5A5.5,5.5,0,1,0,17.5,12,5.51,5.51,0,0,0,12,6.5Zm0,9A3.5,3.5,0,1,1,15.5,12,3.5,3.5,0,0,1,12,15.5Z"
+            />
+          </svg>
+          <svg
+            class="swap-on h-5 w-5 fill-current"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M21.64,13a1,1,0,0,0-1.05-.14,8.05,8.05,0,0,1-3.37.73A8.15,8.15,0,0,1,9.08,5.49a8.59,8.59,0,0,1,.25-2A1,1,0,0,0,8,2.36,10.14,10.14,0,1,0,22,14.05,1,1,0,0,0,21.64,13Zm-9.5,6.69A8.14,8.14,0,0,1,7.08,5.22v.27A10.15,10.15,0,0,0,17.22,15.63a9.79,9.79,0,0,0,2.1-.22A8.11,8.11,0,0,1,12.14,19.73Z"
+            />
+          </svg>
+        </label>
+      </li>
+    
+  </ul>
+
+    </div>
+  </div>
+
+
+            
+            
+            
+            
+                
+            
+            
+            <div class="p-8 w-full flex justify-center">
+                <div class="w-full max-w-7xl lg:grid lg:grid-cols-[1fr_250px] lg:gap-8">
+                    <main class="prose w-full">
+                        
+    <div class="mb-12 pb-4 border-b border-gray-500/15">
+        <h1 class="flex items-center gap-3">
+            Contributing
+            
+        </h1>
+        <p class="text-gray-500"></p>
+    </div>
+    <h1 id="architecture-overview">Architecture Overview</h1>
+<pre class="mermaid border border-gray-500/15">
+ graph TD
+main[&quot;universtar-org&#x2F;universtar&quot;]
+deploy[&quot;Deploy to GitHub Pages&quot;]
+bind[&quot;Bind to Cooresponding Domain&quot;]
+main --&gt;|Reuse the main repository| xmum[&quot;universtar-org&#x2F;xmum&quot;] --&gt; deploy
+main --&gt;|Reuse the main repository| mit[&quot;universtar-org&#x2F;mit&quot;] --&gt; deploy
+main --&gt;|Reuse the main repository| dots[...] --&gt; deploy
+deploy --&gt; bind
+</pre>
+<h1 id="how-it-works">How it Works</h1>
+<p>This project is based on <a rel="external" href="https://gohugo.io/"><code>Hugo</code></a>, which supports adding themes. The main repository <code>universtar-org/universtar</code> serves as a theme, so that other repositories could reuse it.</p>
+<p>There are some GitHub actions used to:</p>
+<ol>
+<li>Fetch and update project data using <a rel="external" href="https://github.com/universtar-org/tools"><code>universtar-org/tools</code></a>, which calls <a rel="external" href="https://docs.github.com/rest">GitHub REST API</a>.</li>
+<li>Automatically upgrade the theme.</li>
+<li>Deploy the site to GitHub Pages.</li>
+</ol>
+<p>Overall, this project is serverless, costless, and highly automatic.</p>
+<h1 id="requirement">Requirement</h1>
+<table><thead><tr><th>Build Tool</th><th>Version</th></tr></thead><tbody>
+<tr><td><a rel="external" href="https://gohugo.io/"><code>Hugo</code></a></td><td><code>v0.153.3+extended+withdeploy</code></td></tr>
+<tr><td><a rel="external" href="https://nodejs.org/"><code>Node.JS</code></a></td><td><code>v24.12.0</code></td></tr>
+<tr><td><a rel="external" href="https://go.dev/"><code>Go</code></a></td><td><code>1.25.5</code></td></tr>
+<tr><td><a rel="external" href="https://just.systems/"><code>just</code></a> (Optional)</td><td><code>v1.46.0</code></td></tr>
+</tbody></table>
+<h1 id="set-up-development-environment">Set up Development Environment</h1>
+<ol start="0">
+<li>
+<p>Fork, clone and enter the repository</p>
+<p>Create a <a rel="external" href="https://github.com/universtar-org/universtar/fork">fork</a> on GitHub.</p>
+<p>Then,</p>
+<pre class="giallo" style="color: #E1E4E8; background-color: #24292E;"><code data-lang="shellscript"><span class="giallo-l"><span style="color: #B392F0;">git</span><span style="color: #9ECBFF;"> clone git@github.com:universtar-org/universtar.git</span></span>
+<span class="giallo-l"><span style="color: #79B8FF;">cd</span><span style="color: #9ECBFF;"> universtar/</span></span></code></pre>
+<blockquote>
+<p>Replace <code>universtar-org/universtar</code> with your forked repository.</p>
+</blockquote>
+</li>
+<li>
+<p>Add Upstream</p>
+<pre class="giallo" style="color: #E1E4E8; background-color: #24292E;"><code data-lang="shellscript"><span class="giallo-l"><span style="color: #B392F0;">git</span><span style="color: #9ECBFF;"> remote add upstream https://github.com/universtar-org/universtar.git</span></span>
+<span class="giallo-l"><span style="color: #B392F0;">git</span><span style="color: #9ECBFF;"> fetch upstream</span></span></code></pre></li>
+<li>
+<p>Create a new branch (based on the <code>develop</code> branch)</p>
+<pre class="giallo" style="color: #E1E4E8; background-color: #24292E;"><code data-lang="shellscript"><span class="giallo-l"><span style="color: #B392F0;">git</span><span style="color: #9ECBFF;"> switch</span><span style="color: #79B8FF;"> --create</span><span style="color: #9ECBFF;"> new-branch-name upstream/develop</span></span></code></pre></li>
+<li>
+<p>Install dependencies</p>
+<p>For NixOS users, run one of the following command to enter dev shell.</p>
+<pre class="giallo" style="color: #E1E4E8; background-color: #24292E;"><code data-lang="shellscript"><span class="giallo-l"><span style="color: #B392F0;">direnv</span><span style="color: #9ECBFF;"> allow</span><span style="color: #6A737D;"> # With `direnv`</span></span>
+<span class="giallo-l"><span style="color: #B392F0;">nix</span><span style="color: #9ECBFF;"> develop</span><span style="color: #6A737D;"> # Without `direnv`</span></span></code></pre>
+<p>For other uses, run this command to install dependencies via <code>npm</code>:</p>
+<pre class="giallo" style="color: #E1E4E8; background-color: #24292E;"><code data-lang="shellscript"><span class="giallo-l"><span style="color: #B392F0;">npm</span><span style="color: #9ECBFF;"> install</span></span></code></pre></li>
+<li>
+<p>Command list</p>
+<p>Preview the website:</p>
+<pre class="giallo" style="color: #E1E4E8; background-color: #24292E;"><code data-lang="shellscript"><span class="giallo-l"><span style="color: #B392F0;">hugo</span><span style="color: #9ECBFF;"> server</span><span style="color: #79B8FF;"> --config</span><span style="color: #9ECBFF;"> ./dev.yaml</span><span style="color: #79B8FF;"> --disableFastRender</span></span>
+<span class="giallo-l"><span style="color: #6A737D;"># Or</span></span>
+<span class="giallo-l"><span style="color: #B392F0;">just</span><span style="color: #9ECBFF;"> dev</span></span></code></pre>
+<p>Clean build caches:</p>
+<pre class="giallo" style="color: #E1E4E8; background-color: #24292E;"><code data-lang="shellscript"><span class="giallo-l"><span style="color: #B392F0;">rm</span><span style="color: #79B8FF;"> -rf</span><span style="color: #9ECBFF;"> public resources ./hugo_stats.json</span></span>
+<span class="giallo-l"><span style="color: #6A737D;"># Or</span></span>
+<span class="giallo-l"><span style="color: #B392F0;">just</span><span style="color: #9ECBFF;"> gc</span></span></code></pre>
+<p>Format files:</p>
+<pre class="giallo" style="color: #E1E4E8; background-color: #24292E;"><code data-lang="shellscript"><span class="giallo-l"><span style="color: #B392F0;">npx</span><span style="color: #9ECBFF;"> prettier</span><span style="color: #79B8FF;"> -w</span><span style="color: #9ECBFF;"> &quot;./**/*.html&quot; &quot;./**/*.md&quot;</span></span>
+<span class="giallo-l"><span style="color: #6A737D;"># Or</span></span>
+<span class="giallo-l"><span style="color: #B392F0;">just</span><span style="color: #9ECBFF;"> format</span></span></code></pre>
+<p>Update project data:</p>
+<pre class="giallo" style="color: #E1E4E8; background-color: #24292E;"><code data-lang="shellscript"><span class="giallo-l"><span style="color: #B392F0;">curl</span><span style="color: #79B8FF;"> -L -o</span><span style="color: #9ECBFF;"> updater https://github.com/universtar-org/tools/releases/latest/download/updater-linux-amd64</span></span>
+<span class="giallo-l"><span style="color: #B392F0;">chmod</span><span style="color: #9ECBFF;"> +x updater</span></span>
+<span class="giallo-l"><span style="color: #B392F0;">./updater</span><span style="color: #9ECBFF;"> ./data/projects</span><span> ;</span><span style="color: #B392F0;"> rm</span><span style="color: #9ECBFF;"> ./updater</span></span>
+<span class="giallo-l"><span style="color: #6A737D;"># Or</span></span>
+<span class="giallo-l"><span style="color: #B392F0;">just</span><span style="color: #9ECBFF;"> update</span></span></code></pre></li>
+<li>
+<p>Commit changes</p>
+<p>The commit message should follow <a rel="external" href="https://www.conventionalcommits.org/en/v1.0.0/">Conventional Commits</a>.</p>
+</li>
+<li>
+<p>Push changes</p>
+<pre class="giallo" style="color: #E1E4E8; background-color: #24292E;"><code data-lang="shellscript"><span class="giallo-l"><span style="color: #B392F0;">git</span><span style="color: #9ECBFF;"> push</span><span style="color: #79B8FF;"> -u</span><span style="color: #9ECBFF;"> origin your/branch</span></span></code></pre></li>
+<li>
+<p>Open pull request</p>
+<p>All changes should be submitted to <code>develop</code> branch at first, so please remember to change the target branch in the pull request.</p>
+</li>
+</ol>
+
+
+    
+
+
+                        
+
+
+
+                        <nav class="mt-12 pt-8 border-t border-gray-500/15">
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                <div class="prev-nav-item">
+                                    
+    
+    
+    
+        
+        
+            
+        
+    
+        
+        
+            
+                
+                    <a class="nav-button nav-button-prev group" href="https://universtar.org/get-start/">
+                        <div class="nav-button-content">
+                            <div class="nav-button-direction">
+                                <svg class="w-5 h-5 transition-transform group-hover:-translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                                </svg>
+                                <span class="nav-button-label">Previous</span>
+                            </div>
+                            <div class="nav-button-title">Get Start</div>
+                        </div>
+                    </a>
+                
+                
+            
+        
+    
+        
+        
+            
+        
+    
+
+                                </div>
+                                <div class="next-nav-item">
+                                    
+    
+        
+        
+        
+            
+            
+            
+        
+            
+            
+            
+        
+            
+            
+            
+                
+            
+        
+    
+
+                                </div>
+                            </div>
+                        </nav>
+                    </main>
+
+                    
+                    
+                        
+
+<div class="hidden lg:block" >
+    <div class="sticky top-20 px-4 py-2 border-l border-gray-500/15">
+        <h4 class="text-lg font-bold mb-1">ON THIS PAGE</h4>
+            <ul class="menu menu-sm toc-menu">
+            
+                <li>
+                    
+                    <a href="https://universtar.org/contributing/#architecture-overview" class="toc-link">Architecture Overview</a>
+                    
+                </li>
+            
+                <li>
+                    
+                    <a href="https://universtar.org/contributing/#how-it-works" class="toc-link">How it Works</a>
+                    
+                </li>
+            
+                <li>
+                    
+                    <a href="https://universtar.org/contributing/#requirement" class="toc-link">Requirement</a>
+                    
+                </li>
+            
+                <li>
+                    
+                    <a href="https://universtar.org/contributing/#set-up-development-environment" class="toc-link">Set up Development Environment</a>
+                    
+                </li>
+            
+            </ul>
+    </div>
+</div>
+
+
+                    
+                </div>
+            </div>
+            
+
+            <script>
+              // Determine theme: localStorage > extra.default_colorset > goyo-dark
+              // Expose theme config for global use (e.g., goyo.js)
+              
+              
+              
+                  
+                  
+                  
+                  
+              
+              window.defaultColorset = "dark";
+              window.darkBrightness = "normal";
+              window.lightBrightness = "normal";
+              window.themeMap = { "dark": "goyo-dark", "light": "goyo-light" };
+              window.fallbackTheme = window.themeMap[window.defaultColorset] || "goyo-dark";
+
+              // Theme mapping - maps user-friendly names to actual DaisyUI theme names
+              var themeMapping = { "goyo-dark": "night", "goyo-light": "lofi" };
+              var currentUserTheme = localStorage.getItem('theme') || window.fallbackTheme;
+              var actualTheme = themeMapping[currentUserTheme] || currentUserTheme;
+
+              // Initialize and run Mermaid only when loaded
+              window.initMermaid = function() {
+                var mermaidTheme = "dark";
+                if(currentUserTheme == "goyo-light") {
+                  mermaidTheme = "light";
+                }
+
+                if (typeof mermaid !== 'undefined') {
+                  mermaid.initialize({ startOnLoad: false, theme: mermaidTheme });
+
+                  // Function to render mermaid diagrams
+                  var renderMermaid = async function() {
+                    const mermaidElements = document.querySelectorAll('.mermaid');
+                    if (mermaidElements.length > 0) {
+                        await mermaid.run({
+                            nodes: mermaidElements
+                        });
+                    }
+                  };
+
+                  // Check if DOMContentLoaded has already fired
+                  if (document.readyState === 'loading') {
+                    document.addEventListener('DOMContentLoaded', renderMermaid);
+                  } else {
+                    // DOMContentLoaded already fired, run immediately
+                    renderMermaid();
+                  }
+                }
+              };
+
+              // Auto-initialize if Mermaid is already loaded
+              if (typeof mermaid !== 'undefined') {
+                window.initMermaid();
+              }
+            </script>
+
+        </div>
+
+        
+        
+        
+        
+        
+        <div id="sidebar" class="drawer-side pt-16 border-e border-gray-500&#x2F;15 overflow-hidden">
+            
+                
+
+
+
+    
+
+
+
+    
+
+<label for="my-drawer-2" class="drawer-overlay"></label>
+<div class="pt-4 w-68 h-[calc(100vh-4rem)] bg-base-100 text-base-content flex flex-col overflow-auto thin-scrollbar">
+    
+    <ul class="menu w-full flex-grow">
+        
+        
+        
+        
+            
+            <li>
+                <a  href="https://universtar.org/introduction">Introduction</a>
+            </li>
+        
+            
+            <li>
+                
+                    <details open>
+                        <summary ><a class="hover:no-underline" href="https://universtar.org/get-start">Get Start</a></summary>
+                        <ul>
+                            
+                            
+                            
+                                
+                                <li>
+                                    <a  href="https://universtar.org/get-start/submit-project">Submit Project</a>
+                                </li>
+                            
+                                
+                                <li>
+                                    <a  href="https://universtar.org/get-start/request-institution">Request an Institution</a>
+                                </li>
+                            
+                        </ul>
+                    </details>
+                
+            </li>
+        
+            
+            <li>
+                <a class="rounded bg-gray-500/15" href="https://universtar.org/contributing">Contributing</a>
+            </li>
+        
+    </ul>
+
+    
+    
+
+    
+<footer class="footer py-2 px-4 mt-2 border-t border-gray-500/50">
+    <div class="w-full">
+        <!-- Main footer content -->
+        <div class="flex flex-col items-center gap-4 mb-4">
+            <!-- Powered by section with better styling -->
+            <div class="text-center">
+                <p class="text-sm text-base-content/60 leading-relaxed">
+                    Powered by <a href='https://www.getzola.org'>Zola</a> and <a href='https://github.com/hahwul/goyo'>Goyo</a>
+                </p>
+            </div>
+        </div>
+
+
+    </div>
+</footer>
+
+</div>
+
+            
+        </div>
+    </div>
+
+    
+        <script type="text/javascript" src="https://universtar.org/goyo.js"></script>
+        
+    
+</body>
+</html>
