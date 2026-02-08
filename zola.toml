@@ -105,12 +105,7 @@ x = false        # Share on X button
 # enable_share_x = false
 
 [extra.comments]
-enabled = false  # Enable comments
-system = ""      # Comment system (e.g., "giscus")
-repo = ""        # Repository for comments (e.g., "hahwul/goyo")
-repo_id = ""     # Repository ID (e.g., "R_kgDOXXXXXXX")
-category = ""    # Comment category (e.g., "General")
-category_id = "" # Category ID (e.g., "DIC_kwDOXXXXXXXXXX")
+enabled = false # Enable comments
 
 [extra.favicon]
 base_path = "/"
