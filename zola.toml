@@ -115,3 +115,7 @@ category_id = "" # Category ID (e.g., "DIC_kwDOXXXXXXXXXX")
 [extra.favicon]
 base_path = "/"
 favicon_svg = "/favicon.svg"
+favicon_96x96 = "/favicon.svg"
+favicon_ico = "/favicon.svg"
+apple_touch_icon = "/favicon.svg"
+site_webmanifest = ""
